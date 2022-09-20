@@ -1,4 +1,4 @@
-function solve(arr=[]){
+function solve(arr){
 let arrey=[];
 
 for(i=0;i<arr.length;i++){
@@ -10,7 +10,7 @@ arrey.push(arr[i]*2);
 
 }
 arrey.reverse()
-console.log(arrey.join(' ').trim())
+return arrey.join(' ').trim()
 }
 solve([10, 15, 20, 25])
 solve([3, 0, 10, 4, 7, 3])
