@@ -33,23 +33,43 @@ class VegetableStore{
     }
     buyingVegetables =(selectedProducts)=>{
         let totalPrice=0;
-        selectedProducts.forEach(data => {
+      selectedProducts.forEach(data => {
+        let [type,quantity]=data.split(" ");
+        let currentProduct=this.availableProducts.find(pr=>pr.type===type)
+        if(!currentProduct){
+            throw Error(`${type} is not available in the store, your current bill is $${totalPrice.toFixed(2)}.`);
+        }
+        if(quantity>currentProduct.quantity){
+            throw new Error(`The quantity ${quantity} for the vegetable ${type} is not available in the store, your current bill is $${totalPrice.toFixed(2)}.`);
+        }
+        totalPrice+=quantity*currentProduct.price
+        currentProduct.quantity-=quantity
+      });
+      return `Great choice! You must pay the following amount $${totalPrice.toFixed(2)}.`
 
-            let [type,quantity]=data.split(' ')
-            let currentProduct= this.availableProducts.find(pr=>pr.type===type)
-            if(!currentProduct)
-            {
-                throw Error(`${type} is not available in the store, your current bill is $${totalPrice.toFixed(2)}.`)
-            }
-            
-                if(quantity>currentProduct.quantity){
-                    throw Error( `The quantity ${quantity} for the vegetable ${type} is not available in the store, your current bill is $${totalPrice.toFixed(2)}.`)
-                }
-                    let priceForProduct=+ quantity*currentProduct.price;
-                    totalPrice+=priceForProduct
-                  currentProduct.quantity-=quantity               
-               return `Great choice! You must pay the following amount $${totalPrice.toFixed(2)}.`            
-        });
+
+
+    }
+    rottingVegetable (type, quantity){
+        let currentProduct=this.availableProducts.find(pr=>pr.type==type)
+        if(!currentProduct){
+            throw Error(`${type} is not available in the store.`)
+        }
+        if(quantity>currentProduct.quantity){
+            currentProduct.quantity=0;
+            return `The entire quantity of the ${type} has been removed.`
+        }
+        currentProduct.quantity-=quantity;
+        return `Some quantity of the ${type} has been removed.`
+    }
+    revision (){
+        let result="Available vegetables:"
+        this.availableProducts=this.availableProducts.sort((a,b)=>a.price-b.price)
+        for (const product of this.availableProducts) {
+            result+=`\n${product.type}-${product.quantity}-$${product.price}`
+        }
+        result+=`\nThe owner of the store is ${this.owner}, and the location is ${this.location}.`
+        return result
     }
 
 }
@@ -57,8 +77,22 @@ class VegetableStore{
 // let vegStore = new VegetableStore("Jerrie Munro", "1463 Pette Kyosheta, Sofia");
 // console.log(vegStore.loadingVegetables(["Okra 2.5 3.5", "Beans 10 2.8", "Celery 5.5 2.2", "Celery 0.5 2.5"]));
 // Test 2 
+// let vegStore = new VegetableStore("Jerrie Munro", "1463 Pette Kyosheta, Sofia");
+//  console.log(vegStore.loadingVegetables(["Okra 2.5 3.5", "Beans 10 2.8", "Celery 5.5 2.2", "Celery 0.5 2.5"]));
+//  console.log(vegStore.buyingVegetables(["Okra 1"]));
+//  console.log(vegStore.buyingVegetables(["Beans 8", "Okra 1.5"]));
+//  console.log(vegStore.buyingVegetables(["Banana 1", "Beans 2"]));
+//test 3
+// let vegStore = new VegetableStore("Jerrie Munro", "1463 Pette Kyosheta, Sofia");
+// console.log(vegStore.loadingVegetables(["Okra 2.5 3.5", "Beans 10 2.8", "Celery 5.5 2.2", "Celery 0.5 2.5"]));
+// console.log(vegStore.rottingVegetable("Okra", 1));
+// console.log(vegStore.rottingVegetable("Okra", 2.5));
+// console.log(vegStore.buyingVegetables(["Beans 8", "Okra 1.5"]));
+//test 4
 let vegStore = new VegetableStore("Jerrie Munro", "1463 Pette Kyosheta, Sofia");
- console.log(vegStore.loadingVegetables(["Okra 2.5 3.5", "Beans 10 2.8", "Celery 5.5 2.2", "Celery 0.5 2.5"]));
- console.log(vegStore.buyingVegetables(["Okra 1"]));
- console.log(vegStore.buyingVegetables(["Beans 8", "Okra 1.5"]));
- console.log(vegStore.buyingVegetables(["Banana 1", "Beans 2"]));
+console.log(vegStore.loadingVegetables(["Okra 2.5 3.5", "Beans 10 2.8", "Celery 5.5 2.2", "Celery 0.5 2.5"]));
+console.log(vegStore.rottingVegetable("Okra", 1));
+console.log(vegStore.rottingVegetable("Okra", 2.5));
+console.log(vegStore.buyingVegetables(["Beans 8", "Celery 1.5"]));
+console.log(vegStore.revision());
+
