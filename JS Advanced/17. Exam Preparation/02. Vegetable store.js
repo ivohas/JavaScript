@@ -74,20 +74,20 @@ class VegetableStore{
 
 }
 // Test 1
-// let vegStore = new VegetableStore("Jerrie Munro", "1463 Pette Kyosheta, Sofia");
-// console.log(vegStore.loadingVegetables(["Okra 2.5 3.5", "Beans 10 2.8", "Celery 5.5 2.2", "Celery 0.5 2.5"]));
+
+console.log(vegStore.loadingVegetables(["Okra 2.5 3.5", "Beans 10 2.8", "Celery 5.5 2.2", "Celery 0.5 2.5"]));
 // Test 2 
-// let vegStore = new VegetableStore("Jerrie Munro", "1463 Pette Kyosheta, Sofia");
-//  console.log(vegStore.loadingVegetables(["Okra 2.5 3.5", "Beans 10 2.8", "Celery 5.5 2.2", "Celery 0.5 2.5"]));
-//  console.log(vegStore.buyingVegetables(["Okra 1"]));
-//  console.log(vegStore.buyingVegetables(["Beans 8", "Okra 1.5"]));
-//  console.log(vegStore.buyingVegetables(["Banana 1", "Beans 2"]));
+
+ console.log(vegStore.loadingVegetables(["Okra 2.5 3.5", "Beans 10 2.8", "Celery 5.5 2.2", "Celery 0.5 2.5"]));
+ console.log(vegStore.buyingVegetables(["Okra 1"]));
+ console.log(vegStore.buyingVegetables(["Beans 8", "Okra 1.5"]));
+ console.log(vegStore.buyingVegetables(["Banana 1", "Beans 2"]));
 //test 3
-// let vegStore = new VegetableStore("Jerrie Munro", "1463 Pette Kyosheta, Sofia");
-// console.log(vegStore.loadingVegetables(["Okra 2.5 3.5", "Beans 10 2.8", "Celery 5.5 2.2", "Celery 0.5 2.5"]));
-// console.log(vegStore.rottingVegetable("Okra", 1));
-// console.log(vegStore.rottingVegetable("Okra", 2.5));
-// console.log(vegStore.buyingVegetables(["Beans 8", "Okra 1.5"]));
+
+console.log(vegStore.loadingVegetables(["Okra 2.5 3.5", "Beans 10 2.8", "Celery 5.5 2.2", "Celery 0.5 2.5"]));
+console.log(vegStore.rottingVegetable("Okra", 1));
+console.log(vegStore.rottingVegetable("Okra", 2.5));
+console.log(vegStore.buyingVegetables(["Beans 8", "Okra 1.5"]));
 //test 4
 let vegStore = new VegetableStore("Jerrie Munro", "1463 Pette Kyosheta, Sofia");
 console.log(vegStore.loadingVegetables(["Okra 2.5 3.5", "Beans 10 2.8", "Celery 5.5 2.2", "Celery 0.5 2.5"]));
