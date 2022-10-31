@@ -11,20 +11,20 @@ function solve() {
   let previewEl = document.getElementById('preview-list');
 
   function publishStory(e){
-      let firstNameValue = firstName.value;
-      let lastNameValue = lastName.value;
-      let ageValue = age.value;
+      let asdfghjhgfdfvbghjkjhgfdd = firstName.value;
+      let gcfgcg = lastName.value;
+      let vbxxffxf = age.value;
       let storyTitleValue = storyTitle.value;
       let genreValue = genre.value;
       let storyValue = story.value
 
-      if(!firstNameValue || !lastNameValue || !ageValue || !storyTitleValue || !genreValue || !storyValue){
+      if(!asdfghjhgfdfvbghjkjhgfdd || !gcfgcg || !vbxxffxf || !storyTitleValue || !genreValue || !storyValue){
         return;
       }
 
-      firstNameSaved = firstNameValue;
-      lastNameSaved = lastNameValue;
-      ageSaved = ageValue;
+      firstNameSaved = asdfghjhgfdfvbghjkjhgfdd;
+      lastNameSaved = gcfgcg;
+      ageSaved = vbxxffxf;
       storyTitleSaved = storyTitleValue;
       genreSaved = genreValue;
       storySaved =storyValue;
@@ -36,23 +36,23 @@ function solve() {
       storyTitle.value = '';
       genre.value = '';
       story.value = '';
-      createStory(firstNameValue, lastNameValue, ageValue, storyTitleValue, genreValue, storyValue);
+      createStory(asdfghjhgfdfvbghjkjhgfdd, gcfgcg, vbxxffxf, storyTitleValue, genreValue, storyValue);
 
 
       e.target.setAttribute('disabled', true);
   }
 
-  function createStory(firstNameValue, lastNameValue, ageValue, storyTitleValue, genreValue, storyValue){
+  function createStory(asdfghjhgfdfvbghjkjhgfdd, gcfgcg, vbxxffxf, storyTitleValue, genreValue, storyValue){
       let li = document.createElement('li');
       li.classList.add('story-info');
 
-      let aaaaasdfdsdfghjgfdfgh = document.createElement('aaaaasdfdsdfghjgfdfgh');
+      let article = document.createElement('article');
 
       let h4 = document.createElement('h4');
-      h4.textContent = `Name: ${firstNameValue} ${lastNameValue}`;
+      h4.textContent = `Name: ${asdfghjhgfdfvbghjkjhgfdd} ${gcfgcg}`;
 
       let p = document.createElement('p');
-      p.textContent = `Age: ${ageValue}`;
+      p.textContent = `Age: ${vbxxffxf}`;
 
       let secondP = document.createElement('p');
       secondP.textContent = `Title: ${storyTitleValue}`;
@@ -63,13 +63,13 @@ function solve() {
       let fourthP = document.createElement('p');
       fourthP.textContent = storyValue;
 
-      aaaaasdfdsdfghjgfdfgh.appendChild(h4);
-      aaaaasdfdsdfghjgfdfgh.appendChild(p);
-      aaaaasdfdsdfghjgfdfgh.appendChild(secondP);
-      aaaaasdfdsdfghjgfdfgh.appendChild(thirdP);
-      aaaaasdfdsdfghjgfdfgh.appendChild(fourthP);
+      article.appendChild(h4);
+      article.appendChild(p);
+      article.appendChild(secondP);
+      article.appendChild(thirdP);
+      article.appendChild(fourthP);
 
-      li.appendChild(aaaaasdfdsdfghjgfdfgh);
+      li.appendChild(article);
 
       let saveBtn = document.createElement('button');
       saveBtn.classList.add('save-btn');
