@@ -9,3 +9,5 @@ All my JS project during the courses Applications and Advance
 
 [04. Arrays and Nested Arrays- Exercise](https://github.com/ivohas/JavaScript/tree/main/JS%20Advanced/04.%20Exercise%20Arrays%20and%20Nested%20Arrays)
 
+[05. Objects and Composition- Lab]
+
