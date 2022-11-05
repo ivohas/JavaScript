@@ -13,4 +13,4 @@ All my JS project during the courses Applications and Advance
 
 [05. Objects and Composition- Lab](https://github.com/ivohas/JavaScript/tree/main/JS%20Advanced/05.%20Objects%20and%20Composition)
 
-[07. DOM Introduction- Lab]
+[07. DOM Introduction- Lab]()
