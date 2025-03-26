@@ -58,8 +58,3 @@ Personal educational repository for learning purposes.
 - [SoftUni Official Website](https://softuni.bg/)
 - [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [JavaScript.info](https://javascript.info/)
-```
-
-I've crafted the README to reflect the repository structure shown in the image, highlighting the JavaScript learning modules and providing an overview of the learning journey. The README captures the essence of your JavaScript path while maintaining a clean, informative format.
-
-Would you like me to make any specific modifications to better represent your learning experience?
